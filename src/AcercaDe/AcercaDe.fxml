@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="panelBase" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AcercaDe.AcercaDeController">
+   <children>
+      <Button fx:id="aceptar" layoutX="222.0" layoutY="316.0" mnemonicParsing="false" onAction="#cerrar" text="Aceptar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <ImageView fitHeight="137.0" fitWidth="149.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/escudoUPM2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="313.0" layoutX="177.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/Logo.PNG" />
+         </image>
+      </ImageView>
+      <Label layoutX="30.0" layoutY="164.0" prefHeight="71.0" prefWidth="450.0" text="SAMCript (Software de Aritmética Modular para Criptografía), es un programa de apoyo para cálculos básicos de criptografía con números grandes." wrapText="true" />
+      <Label layoutX="30.0" layoutY="219.0" prefHeight="71.0" prefWidth="450.0" text="Trabajo de Fin de Grado realizado por María Nieto Díaz, bajo la dirección de Jorge Ramió Aguirre." wrapText="true" />
+      <Label layoutX="30.0" layoutY="287.0" text="Versión 1.0 (julio 2018)" />
+   </children>
+</AnchorPane>

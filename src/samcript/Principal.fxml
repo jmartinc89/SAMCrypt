@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="panelAnchorBase" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="samcript.PrincipalController">
+   <children>
+      <MenuBar fx:id="barraMenu" layoutX="125.0" layoutY="110.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu fx:id="menuArchivo" mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem fx:id="archivoCerrar" mnemonicParsing="false" onAction="#cerrarKey" text="Salir">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu fx:id="menuUnidades" mnemonicParsing="false" text="Unidades">
+            <items>
+              <CheckMenuItem fx:id="unidadesDecimal" mnemonicParsing="false" onAction="#decimalKey" text="Decimal">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></CheckMenuItem>
+                  <CheckMenuItem fx:id="unidadesBinario" mnemonicParsing="false" onAction="#binarioKey" text="Binario">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="B" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></CheckMenuItem>
+                  <CheckMenuItem fx:id="unidadesHexadecimal" mnemonicParsing="false" onAction="#hexadecimalKey" text="Hexadecimal">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></CheckMenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Operaciones">
+              <items>
+                <MenuItem fx:id="sumaKey" mnemonicParsing="false" onAction="#sumaKey" text="Suma">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="restaKey" mnemonicParsing="false" onAction="#restaKey" text="Resta">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="multiplicacionKey" mnemonicParsing="false" onAction="#multiplicacionKey" text="Multiplicación">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="M" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="divisionKey" mnemonicParsing="false" onAction="#divisionKey" text="División">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="raizCuadradaKey" mnemonicParsing="false" onAction="#raizCuadradaKey" text="Raíz cuadrada">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="raizPrimitivaKey" mnemonicParsing="false" onAction="#raizPrimitivaKey" text="Raíz primitiva">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="K" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="XORKey" mnemonicParsing="false" onAction="#XORKey" text="XOR">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Y" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="inversoKey" mnemonicParsing="false" onAction="#inversoKey" text="Inverso">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="potenciaKey" mnemonicParsing="false" onAction="#potenciaKey" text="Potencia">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="moduloKey" mnemonicParsing="false" onAction="#moduloKey" text="Módulo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="mcdKey" mnemonicParsing="false" onAction="#mcdKey" text="MCD">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="mcmKey" mnemonicParsing="false" onAction="#mcmKey" text="mcm">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="primalidadKey" mnemonicParsing="false" onAction="#primalidadKey" text="Test primalidad">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="T" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="pfeKey" mnemonicParsing="false" onAction="#pfeKey" text="PFE">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="pldKey" mnemonicParsing="false" onAction="#pldKey" text="PLD">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+            </Menu>
+            <Menu fx:id="menuTablas" mnemonicParsing="false" text="Tablas">
+              <items>
+                <MenuItem fx:id="tablaPrimos" mnemonicParsing="false" onAction="#tablaPrimos" text="Primos">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="tablaPrimosSeguros" mnemonicParsing="false" onAction="#tablaPrimosSeguros" text="Seguros">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="tablaASCII" mnemonicParsing="false" onAction="#tablaASCII" text="ASCII">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+            </Menu>
+            <Menu fx:id="menuConversor" mnemonicParsing="false" text="Conversor">
+               <items>
+                  <MenuItem fx:id="conversor" mnemonicParsing="false" onAction="#conversor" text="Conversor">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="J" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu fx:id="menuAyuda" mnemonicParsing="false" text="Ayuda">
+              <items>
+                <MenuItem fx:id="ayudaManual" mnemonicParsing="false" onAction="#manualUsuarioKey" text="Manual de usuario">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="U" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="ayudaPruebas" mnemonicParsing="false" onAction="#bancoPruebasKey" text="Banco de pruebas">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="ayudaAcerca" mnemonicParsing="false" onAction="#acercaDeKey" text="Acerca de">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <GridPane fx:id="panelGridBase" layoutX="115.0" layoutY="95.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="510.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane fx:id="panelDerecho" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Separator fx:id="separadorVertical" layoutX="11.0" layoutY="103.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label fx:id="etqTitulo" layoutX="41.0" layoutY="39.0" text="Historial" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="textoHistorial" editable="false" layoutX="53.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="botonHistorial" layoutX="119.0" layoutY="422.0" mnemonicParsing="false" onAction="#borrarHistorial" text="Borrar Historial" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="88.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <GridPane fx:id="panelIzquierdo">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="800.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane fx:id="panelSuperior">
+                     <children>
+                        <Separator fx:id="separadorHorizontal" layoutX="117.0" layoutY="201.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <StackPane fx:id="panelStack" layoutX="133.0" layoutY="33.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fx:id="imagen" fitHeight="240.0" fitWidth="510.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../Imagenes/Logo.PNG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelInferior" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <GridPane fx:id="panelInferorGrid" layoutX="143.0" layoutY="74.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <AnchorPane fx:id="panelGrid00" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="botonSuma" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#sumar" text="+" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Suma">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid01" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="botonRaizPrimitiva" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="18.0" mnemonicParsing="false" onAction="#raizPrimitiva" text="α" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Raíz primitiva">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid02" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="botonMcd" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="18.0" mnemonicParsing="false" onAction="#mcd" text="MCD" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Máximo Común Divisor">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid10" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button fx:id="botonResta" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#restar" text="-" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Resta">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid11" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="botonXOR" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#XOR" text="XOR" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="XOR">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid12" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="botonMcm" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#mcm" text="mcm" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Mínimo Común Múltiplo">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid20" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Button fx:id="botonMultiplicacion" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#multiplicar" text="x" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Multiplicación">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid21" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="botonInverso" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#inverso" text="Inv" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Inverso">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid22" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="botonPrimalidad" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#primalidad" text="Primalidad" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Test de Primalidad">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid30" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                 <children>
+                                    <Button fx:id="botonDivision" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#dividir" text="/" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="División">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid31" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="botonPotencia" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#potencia" text="X^y" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Potencia">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid32" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="botonFactorizacion" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#factorizacion" text="PFE" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Problema de Factorización Entera">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid40" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                 <children>
+                                    <Button fx:id="botonRaiz" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#raiz" text="√" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Raíz cuadrada">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid41" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="botonModulo" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#modulo" text="Mod" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Módulo">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panelGrid42" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="botonLogaritmo" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="27.0" mnemonicParsing="false" onAction="#logaritmo" text="PLD" textAlignment="CENTER" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Problema del Logaritmo Discreto">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font></Tooltip>
+                                       </tooltip></Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
